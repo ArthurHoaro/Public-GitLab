@@ -64,8 +64,8 @@ The SQL script below creates a default `guest` user for anonymous access.  It al
 You have to patch your GitLab database with 2 SQL scripts:
 
     cd /home/git/gitlab/pgl
-    psql -h host -U user database < pgl_postgres_insert.sql
-    psql -h host -U user database < pgl_postgres_trigger.sql
+    psql -h host -U user database < pgl_pgsql_insert.sql
+    psql -h host -U user database < pgl_pgsql_trigger.sql
 
 #### MySQL
 You have to patch your GitLab database with 2 SQL scripts:
@@ -103,7 +103,7 @@ If the changelog on this README indicates any SQL update, you need to update you
 PostgreSQL:
 
      cd /home/git/gitlab/pgl
-     psql -h host -U user database < pgl_postgres_trigger.sql
+     psql -h host -U user database < pgl_pgsql_trigger.sql
      
 
 MySQL:
