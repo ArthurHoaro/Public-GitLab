@@ -2,6 +2,7 @@ class Ability
   class << self
     def allowed(user, subject)
       return [] unless user.kind_of?(User)
+      return [] if user.blocked?
 
       case subject.class.name
       when "Project" then project_abilities(user, subject)
@@ -86,15 +87,15 @@ class Ability
         :read_team_member,
         :read_merge_request,
         :read_note,
-        :download_code
+        :download_code,
+	:write_issue,
+        :write_note
       ]
     end
 
     def project_guest_rules
       project_anon_rules + [
         :write_project,
-        :write_issue,
-        :write_note
       ]
     end
 
@@ -143,6 +144,10 @@ class Ability
     def group_abilities user, group
       rules = []
 
+      if group.users.include?(user)
+        rules << :read_group
+      end
+
       # Only group owner and administrators can manage group
       if group.owners.include?(user) || user.admin?
         rules << [
@@ -169,14 +174,14 @@ class Ability
 
     [:issue, :note, :project_snippet, :personal_snippet, :merge_request].each do |name|
       define_method "#{name}_abilities" do |user, subject|
-        if subject.author == user
+        if subject.author == user && subject.author.username != "guest"
           [
             :"read_#{name}",
             :"write_#{name}",
             :"modify_#{name}",
             :"admin_#{name}"
           ]
-        elsif subject.respond_to?(:assignee) && subject.assignee == user
+        elsif subject.respond_to?(:assignee) && subject.assignee == user && subject.author.username != "guest"
           [
             :"read_#{name}",
             :"write_#{name}",
