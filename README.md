@@ -17,6 +17,7 @@ You can browse a live example at http://git.hoa.ro (you won't be able to create 
 _Disclaimer_: I do not provide any support on GitLab itself.  I only contribute to the _public_ part.  Please refer to the [official documentation](https://github.com/gitlabhq/gitlabhq/blob/master/README.md) for any help on GitLab itself.
 
 You should also be aware that **Public GitLab** only applies to the latest [stable](https://github.com/ArthurHoaro/Public-GitLab/) release branch of GitLab.  So, use the *-stable branches!  The `master` branch on this repo has a high chance to be broken.
+
 ## Changelog
 
   * [2013-08-25] : Public GitLab supports GitLab 6.0 (stable) - [Upgrade 5.4 to 6.0](https://github.com/ArthurHoaro/Public-GitLab/blob/6-0-stable/doc/update/5.4-to-6.0.md)
