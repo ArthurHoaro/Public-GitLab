@@ -28,7 +28,7 @@
                 %i.icon-cogs
           - if current_user.can_create_project? || current_user.can_create_project_priv?
             %li
-              = link_to new_project_path, title: "Create New Project", class: 'has_bottom_tooltip', 'data-original-title' => 'New project'  do
+              = link_to new_project_path, title: "New project", class: 'has_bottom_tooltip', 'data-original-title' => 'New project'  do
                 %i.icon-plus
         %li.separator
         %li
