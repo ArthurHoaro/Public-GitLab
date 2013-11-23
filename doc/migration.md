@@ -26,7 +26,7 @@ Save your config files:
 ```bash
 cd /home/git
 mkdir gitlab61-save
-tar cvfz save/gitlab61.tar.gz gitlab
+tar cvfz gitlab61-save/gitlab61.tar.gz gitlab
 mv gitlab/config/database.yml gitlab61-save/
 mv gitlab/config/gitlab.yml gitlab61-save/
 mv gitlab/config/unicorn.rb gitlab61-save/
