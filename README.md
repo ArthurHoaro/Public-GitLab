@@ -1,3 +1,5 @@
+> This project is no longer supported.
+
 # Public GitLab
 
 ## Presentation
@@ -18,6 +20,10 @@ _Disclaimer_: I do not provide any support on GitLab itself.  I only contribute 
 
 You should also be aware that **Public GitLab** only applies to the latest [stable](https://github.com/ArthurHoaro/Public-GitLab/) release branch of GitLab.  So, use the *-stable branches!  The `master` branch on this repo has a high chance to be broken.
 ## Changelog
+
+  * [2013-11-23] : GitLab now supports public mode. Follow [this migration guide](https://github.com/ArthurHoaro/Public-GitLab/doc/migration.md) to clean up your database and files, and get back to the official repository. This fork will no longer be supported (except for migration support, of course).
+
+  > And again, thank you everyone for your support about this fork, it has been a pleasure to work on it. 
 
   * [2013-10-05] : Public GitLab supports GitLab 6.1 (stable) - [Upgrade 6.0 to 6.1](https://github.com/ArthurHoaro/Public-GitLab/blob/6-1-stable/doc/update/6.0-to-6.1.md)
   * [2013-08-25] : Public GitLab supports GitLab 6.0 (stable) - [Upgrade 5.4 to 6.0](https://github.com/ArthurHoaro/Public-GitLab/blob/6-1-stable/doc/update/5.4-to-6.0.md)
