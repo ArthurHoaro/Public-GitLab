@@ -116,6 +116,28 @@ sudo -u git -H bundle exec rake assets:clean RAILS_ENV=production
 sudo -u git -H bundle exec rake assets:precompile RAILS_ENV=production
 ```
 
+## 10. Fix permissions
+
+```
+# Make sure GitLab can write to the log/ and tmp/ directories
+sudo chown -R git log/
+sudo chown -R git tmp/
+sudo chmod -R u+rwX  log/
+sudo chmod -R u+rwX  tmp/
+
+# Create directories for sockets/pids and make sure GitLab can write to them
+sudo -u git -H mkdir tmp/pids/
+sudo -u git -H mkdir tmp/sockets/
+sudo chmod -R u+rwX  tmp/pids/
+sudo chmod -R u+rwX  tmp/sockets/
+
+# Create public/uploads directory otherwise backup will fail
+sudo -u git -H mkdir public/uploads
+sudo chmod -R u+rwX  public/uploads
+
+# Copy the example Rack attack config
+sudo -u git -H cp config/initializers/rack_attack.rb.example config/initializers/rack_attack.rb
+
 ## 10. Start services
 
 ```
