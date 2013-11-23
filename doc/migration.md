@@ -137,6 +137,7 @@ sudo chmod -R u+rwX  public/uploads
 
 # Copy the example Rack attack config
 sudo -u git -H cp config/initializers/rack_attack.rb.example config/initializers/rack_attack.rb
+```
 
 ## 10. Start services
 
