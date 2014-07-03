@@ -1,3 +1,5 @@
+> The [main GitLab project](https://about.gitlab.com/gitlab-ce/) supports public projects now.
+
 > This project is no longer supported.
 
 # Public GitLab
